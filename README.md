@@ -1,26 +1,43 @@
 # ESXi Management Skill
 
-A comprehensive skill document for managing VMware ESXi hosts and virtual machines using the **govc** CLI tool. Designed for AI agents, automation scripts, and human operators who need a complete reference for ESXi management via command line.
+> A comprehensive, bilingual skill document for managing VMware ESXi hosts and virtual machines using the **govc** CLI tool.
 
-## What This Covers
+---
 
-- Installation and configuration of govc
-- Connection to ESXi hosts (standalone, not vCenter)
-- Host information and monitoring (hardware, sensors, resource usage)
-- Virtual machine lifecycle: create, power on/off, clone, delete, snapshot
-- Storage management: datastores, ISO upload, disk resize
-- Network management: vSwitches, port groups, NIC configuration
-- Multi-host management patterns
-- Guest operations via VMware Tools
-- Resource pool and CPU/memory tuning
-- Import/export OVF/OVA templates
-- Troubleshooting common issues
+## Description
+
+This repository contains a complete reference for managing VMware ESXi standalone hosts via the command line. It is designed for:
+
+- **AI Agents** (Hermes Agent, Claude, GPT, etc.) that need to perform ESXi management tasks
+- **Automation scripts** requiring programmatic control of VMs
+- **Human operators** who prefer CLI over the web UI
+
+> 本仓库提供通过命令行管理 VMware ESXi 独立主机的完整参考文档，支持中英双语。适用于 AI 代理、自动化脚本及偏好命令行操作的运维人员。
+
+## Coverage
+
+| Topic | Description |
+|-------|-------------|
+| Installation | govc binary setup on Linux/macOS |
+| Connection | Environment variables, TLS, multi-host patterns |
+| Host Monitoring | Hardware info, sensors, resource usage |
+| VM Lifecycle | Create, power on/off, clone, delete, snapshot |
+| Storage | Datastore management, ISO upload, disk resize |
+| Networking | vSwitch, port groups, NIC configuration |
+| Multi-Host | Shell functions, scripts, parallel operations |
+| Guest Operations | VMware Tools command execution, file transfer |
+| Resource Tuning | CPU, memory, resource pools |
+| Import/Export | OVF/OVA template management |
+| Troubleshooting | Connection errors, VM issues, performance |
+| Quick Reference | Common commands cheat sheet |
 
 ## Prerequisites
 
 - Network access to ESXi host (HTTPS, port 443)
 - ESXi root credentials (or equivalent admin account)
-- Linux/macOS machine with wget/curl for govc installation
+- Linux or macOS machine with `wget` or `curl`
+
+> 前置条件：需具备到 ESXi 主机的网络访问（HTTPS 443端口）、root 凭据、以及装有 wget/curl 的 Linux 或 macOS 环境。
 
 ## Quick Start
 
@@ -31,7 +48,7 @@ tar -xzf govc_Linux_x86_64.tar.gz govc
 sudo mv govc /usr/local/bin/
 
 # Configure connection
-export GOVC_URL='https://10.110.199.218'
+export GOVC_URL='https://<your_esxi_ip>'
 export GOVC_USERNAME='root'
 export GOVC_PASSWORD='your_password'
 export GOVC_INSECURE=true
@@ -45,7 +62,7 @@ govc vm.info '*'
 
 ## Skill File
 
-See [SKILL.md](SKILL.md) for the complete skill document. This is the primary reference file designed to be loaded by AI agents (Hermes Agent, Claude, etc.) to perform ESXi management tasks.
+See **[SKILL.md](SKILL.md)** for the complete skill document (bilingual, English primary with Chinese translations).
 
 ## License
 
